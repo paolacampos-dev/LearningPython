@@ -11,7 +11,7 @@ Exponentiation(**): a ** b
 ## Calculating area of a circle
 
 radius = 10 # radius of a circle
-area_of_circle = 3.14 _ radius \*\* 2 # two _ sign means exponent or power
+area*of_circle = 3.14 * radius \*\* 2 # two \_ sign means exponent or power
 print('Area of a circle:', area_of_circle)
 
 ## Calculating area of a rectangle
@@ -71,11 +71,11 @@ In addition to the above comparison operator Python uses:
 **in**: Returns True if the queried list contains a certain item(x in y)
 **not in**: Returns True if the queried list doesn't have a certain item(x not in y)
 
-# Logical operators:
+# Logical operators (Boolean Logic)
 
 and returns True if both statements are true
 or returnes True if one of the statements are true
-not reverse the result
+**not** reverse the result (**¬**)
 
 examples:
 print(3 > 2 and 4 > 3) # True - because both statements are true
@@ -86,7 +86,7 @@ print(3 > 2 or 4 > 3) # True - because both statements are true
 print(3 > 2 or 4 < 3) # True - because one of the statements is true
 print(3 < 2 or 4 < 3) # False - because both statements are false
 print('True or False:', True or False)
-print(not 3 > 2) # False - because 3 > 2 is true, then not True gives False
+print(not (3 > 2)) # False - because 3 > 2 is true, then not True gives False (needs to be in brackets to negate the whole condition is inside)
 print(not True) # False - Negation, the not operator turns true to false
 print(not False) # True
 print(not not True) # True
