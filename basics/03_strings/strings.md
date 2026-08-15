@@ -2,26 +2,27 @@
   <h1>Strings</h1>
 </div>
 
-  - [Strings](#strings)
-    - [Creating a String](#creating-a-string)
-    - [String Concatenation](#string-concatenation)
-    - [Escape Sequences in Strings](#escape-sequences-in-strings)
-    - [String formatting](#string-formatting)
-      - [Old Style String Formatting (% Operator)](#old-style-string-formatting--operator)
-      - [New Style String Formatting (str.format)](#new-style-string-formatting-strformat)
-      - [String Interpolation / f-Strings (Python 3.6+)](#string-interpolation--f-strings-python-36)
-    - [Python Strings as Sequences of Characters](#python-strings-as-sequences-of-characters)
-      - [Unpacking Characters](#unpacking-characters)
-      - [Accessing Characters in Strings by Index](#accessing-characters-in-strings-by-index)
-      - [Slicing Python Strings](#slicing-python-strings)
-      - [Reversing a String](#reversing-a-string)
-      - [Skipping Characters While Slicing](#skipping-characters-while-slicing)
-    - [String Methods](#string-methods)
-  - [💻 Exercises]
+- [Strings](#strings)
+  - [Creating a String](#creating-a-string)
+  - [String Concatenation](#string-concatenation)
+  - [Escape Sequences in Strings](#escape-sequences-in-strings)
+  - [String formatting](#string-formatting)
+    - [Old Style String Formatting (% Operator)](#old-style-string-formatting--operator)
+    - [New Style String Formatting (str.format)](#new-style-string-formatting-strformat)
+    - [String Interpolation / f-Strings (Python 3.6+)](#string-interpolation--f-strings-python-36)
+  - [Python Strings as Sequences of Characters](#python-strings-as-sequences-of-characters)
+    - [Unpacking Characters](#unpacking-characters)
+    - [Accessing Characters in Strings by Index](#accessing-characters-in-strings-by-index)
+    - [Slicing Python Strings](#slicing-python-strings)
+    - [Reversing a String](#reversing-a-string)
+    - [Skipping Characters While Slicing](#skipping-characters-while-slicing)
+  - [String Methods](#string-methods)
+- [💻 Exercises]
 
 ## Strings
 
 Text is a string data type. Any data type written as text is a string. Any data under single, double or triple quote are strings. There are different string methods and built-in functions to deal with string data types. To check the length of a string use the len() method.
+write between '' or "" is the same
 
 ### Creating a String
 
@@ -73,12 +74,13 @@ print(len(full_name)) # 11
 In Python and other programming languages \ followed by a character is an escape sequence. Let us see the most common escape characters:
 
 - \n: new line
-- \t: Tab means(8 spaces) 
+- \t: Tab means(8 spaces)
 - \\\\: Back slash
 - \\': Single quote (')
 - \\": Double quote (")
 
 Letys see the use of the above escape sequences with examples:
+
 ```py
 print('I hope everyone is enjoying the Python Challenge.\nAre you ?') # line break
 print('Days\tTopics\tExercises') # adding tab space or 4 spaces
@@ -207,9 +209,8 @@ print(f) # n
 
 #### Accessing Characters in Strings by Index
 
-In programming counting starts from zero. 
+In programming counting starts from zero.
 Therefore the first letter of a string is at zero index and the last letter of a string is the length of a string minus one.
-
 
 ```py
 language = 'Python'
@@ -249,7 +250,7 @@ print(last_three) # hon
 last_three = language[-3:]
 print(last_three)   # hon
 last_three = language[3:]
-print(last_threehon)   # 
+print(last_threehon)   #
 ```
 
 #### Reversing a String
@@ -267,7 +268,7 @@ It is possible to skip characters while slicing by passing step argument to slic
 
 ```py
 language = 'Python'
-pto = language[0:6:2] #
+pto = language[0:6:2] # (start:stop:step)
 print(pto) # Pto
 ```
 
@@ -280,14 +281,19 @@ There are many string methods which allow us to format strings. See some of the 
 ```py
 challenge = 'thirty days of python'
 print(challenge.capitalize()) # 'Thirty days of python'
+challenge.upper()        # THIRTYDAYS OF PYTHON
+challenge.lower()        # thirtydays of python
+challenge.capitalize()   # Thirtydays of python
+challenge.replace('python', 'Java')
 ```
 
-- count(): returns occurrences of substring in string, count(substring, start=.., end=..). The start is a starting indexing for counting and end is the last index to count.
+- count(): returns occurrences of substring in string, count(substring, start=.., end=..).
+  The start is a starting indexing for counting and end is the last index to count.
 
 ```py
 challenge = 'thirty days of python'
 print(challenge.count('y')) # 3
-print(challenge.count('y', 7, 14)) # 1, 
+print(challenge.count('y', 7, 14)) # 1,
 print(challenge.count('th')) # 2`
 ```
 
@@ -307,7 +313,7 @@ print(challenge.expandtabs())   # 'thirty  days    of      python'
 print(challenge.expandtabs(10)) # 'thirty    days      of        python'
 ```
 
-- find(): Returns the index of the first occurrence of a substring, if not found returns -1
+- **find()**: Returns the index of the first occurrence of a substring, if not found returns -1
 
 ```py
 challenge = 'thirty days of python'
@@ -327,36 +333,38 @@ print(challenge.rfind('th')) # 17
    More about string formatting check this [link](https://www.programiz.com/python-programming/methods/string/format)
 
 ```py
-first_name = 'Asabeneh'
-last_name = 'Yetayeh'
-age = 250
+first_name = 'Paola'
+last_name = 'Campos'
+age = 25
 job = 'teacher'
-country = 'Finland'
-sentence = 'I am {} {}. I am a {}. I am {} years old. I live in {}.'.format(first_name, last_name, job, age, country)
-print(sentence) # I am Asabeneh Yetayeh. I am 250 years old. I am a teacher. I live in Finland.
+country = 'Uk'
+sentence = 'I am {} {}. I am a {}. I am {} years old. I live in the {}.'.format(first_name, last_name, job, age, country)
+print(sentence) # I am Paola Campos. I am 25 years old. I am a teacher. I live in the Uk.
 
 radius = 10
 pi = 3.14
 area = pi * radius ** 2
-result = 'The area of a circle with radius {} is {}'.format(str(radius), str(area))
+result = 'The area of a circle with radius {} is {}'.format(radius, area)
+# another way ( with concatenation we need to convert the interger to a string if not will give error)
+result = 'The radius is ' + str(radius)
 print(result) # The area of a circle with radius 10 is 314
 ```
 
-- index(): Returns the lowest index of a substring, additional arguments indicate starting and ending index (default 0 and string length - 1). If the substring is not found it raises a valueError. 
+- **index()**: Returns the lowest index of a substring (the first occurrence of a substring), additional arguments indicate starting and ending index (default 0 and string length - 1). If the substring is not found it raises a valueError.
 
 ```py
 challenge = 'thirty days of python'
 sub_string = 'da'
-print(challenge.index(sub_string))  # 7
+print(challenge.index(sub_string))  # 7  the first occurrence of 'da'
 print(challenge.index(sub_string, 9)) # error
 ```
 
-- rindex(): Returns the highest index of a substring, additional arguments indicate starting and ending index (default 0 and string length - 1)
+- rindex(): Returns the highest index of a substring (the last occurrence of a substring), additional arguments indicate starting and ending index (default 0 and string length - 1)
 
 ```py
 challenge = 'thirty days of python'
 sub_string = 'da'
-print(challenge.rindex(sub_string))  # 7
+print(challenge.rindex(sub_string))  # 7 the last occurrence of 'da'
 print(challenge.rindex(sub_string, 9)) # error
 print(challenge.rindex('on', 8)) # 19
 ```
@@ -395,8 +403,8 @@ challenge = 'thirty days of python'
 print(challenge.isdecimal())  # False
 challenge = '123'
 print(challenge.isdecimal())  # True
-challenge = '\u00B2'
-print(challenge.isdigit())   # True 
+challenge = '\u00B2' # is a Unicode escape sequence representing the character: small raised 2 (squared)
+print(challenge.isdigit())   # True
 challenge = '12 3'
 print(challenge.isdecimal())  # False, space not allowed
 ```
@@ -450,7 +458,7 @@ challenge = 'THIRTY DAYS OF PYTHON'
 print(challenge.isupper()) # True
 ```
 
-- join(): Returns a concatenated string
+- **join()**: Returns a concatenated string
 
 ```py
 web_tech = ['HTML', 'CSS', 'JavaScript', 'React']
@@ -471,14 +479,14 @@ challenge = 'thirty days of pythoonnn'
 print(challenge.strip('noth')) # 'irty days of py'
 ```
 
-- replace(): Replaces substring with a given string
+- **replace()**: Replaces substring with a given string
 
 ```py
 challenge = 'thirty days of python'
 print(challenge.replace('python', 'coding')) # 'thirty days of coding'
 ```
 
-- split(): Splits the string, using given string or space as a separator
+- **split()**: Splits the string, using given string or space as a separator
 
 ```py
 challenge = 'thirty days of python'
@@ -513,9 +521,7 @@ challenge = '30 days of python'
 print(challenge.startswith('thirty')) # False
 ```
 
-🌕 You are an extraordinary person and you have a remarkable potential. You have just completed day 4 challenges and you are four steps a head in to your way to greatness. Now do some exercises for your brain and muscles.
-
-## 💻 Exercises - Day 4
+## 💻 Exercises -
 
 1. Concatenate the string 'Thirty', 'Days', 'Of', 'Python' to a single string, 'Thirty Days Of Python'.
 2. Concatenate the string 'Coding', 'For' , 'All' to a single string, 'Coding For All'.
@@ -528,7 +534,7 @@ print(challenge.startswith('thirty')) # False
 9. Cut(slice) out the first word of _Coding For All_ string.
 10. Check if _Coding For All_ string contains a word Coding using the method index, find or other methods.
 11. Replace the word coding in the string 'Coding For All' to Python.
-12. Change "Python for Everyone" to "Python for All" using the replace method or other methods. 
+12. Change "Python for Everyone" to "Python for All" using the replace method or other methods.
 13. Split the string 'Coding For All' using space as the separator (split()) .
 14. "Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon" split the string at the comma.
 15. What is the character at index 0 in the string _Coding For All_.
@@ -559,7 +565,7 @@ print(challenge.startswith('thirty')) # False
 34. Use a tab escape sequence to write the following lines.
     ```py
     Name      Age     Country   City
-    Asabeneh  250     Finland   Helsinki
+    Paola     25       UK       London
     ```
 35. Use the string formatting method to display the following:
 
@@ -580,8 +586,3 @@ The area of a circle with radius 10 is 314 meters square.
 8 // 6 = 1
 8 ** 6 = 262144
 ```
-
-🎉 CONGRATULATIONS ! 🎉
-
-[<< Day 3](../03_Day_Operators/03_operators.md) | [Day 5 >>](../05_Day_Lists/05_lists.md)
-
