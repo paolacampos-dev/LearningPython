@@ -1,61 +1,61 @@
+"hola, workd".split()  # ['hola', 'world']
+"hola, workd".split("O") # ['h', 'la', 'w', 'rld']
+
+numbers = [5, 2, 3]
+numbers[1] = 20
+print(numbers) #[5, 20, 3]
+
+numbers[1:] = [200, 300, 400]
+print(numbers) # [1, 200, 300, 400]
+
+
+# Comprehension List
+numbers = (1, 2, 3)
+
+double_numbers = []
+for number in numbers:
+    double_numbers.append(number**2)
+
+print(double_numbers)  # [1, 4, 9]
+
+# intead of all that we use a list comprehension (shorthand for "for loop")
+squares =  [num**2 for num in numbers]
+print(squares) # [1, 4, 9]
+
+numbers.sort()  # ascendant order
+numbers.sort(reverse=True) # descendant order
+numbers.sort(key=len) # sorted by lenght from shorter to longer as an example of sorted by the key as function
+
 # A. Exercises: Level 1
-
 # 1. Declare an empty list
-
 # 2. Declare a list with more than 5 items
-
 # 3. Find the length of your list
-
 # 4. Get the first item, the middle item and the last item of the list
-
 # 5. Declare a list called mixed_data_types, put your name, age, height, marital status and address
-
 # 6. Declare a list variable named it_companies and assign the initial values:
 # Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon
-
 # 7. Print the list using print()
-
 # 8. Print the number of companies in the list
-
 # 9. Print the first, middle and last company
-
 # 10. Print the list after modifying one of the companies
-
 # 11. Add an IT company to it_companies
-
 # 12. Insert an IT company in the middle of the companies list
-
 # 13. Change one of the it_companies names to uppercase (IBM excluded!)
-
 # 14. Join the it_companies with the string '#; '
-
 # 15. Check if a certain company exists in the it_companies list
-
 # 16. Sort the list using the sort() method
-
 # 17. Reverse the list in descending order using the reverse() method
-
 # 18. Slice out the first 3 companies from the list
-
 # 19. Slice out the last 3 companies from the list
-
 # 20. Slice out the middle IT company or companies from the list
-
 # 21. Remove the first IT company from the list
-
 # 22. Remove the middle IT company or companies from the list
-
 # 23. Remove the last IT company from the list
-
 # 24. Remove all IT companies from the list
-
 # 25. Destroy the IT companies list
-
 # 26. Join the following lists:
-
 # front_end = ['HTML', 'CSS', 'JS', 'React', 'Redux']
 # back_end = ['Node', 'Express', 'MongoDB']
-
 # 27. After joining the lists in question 26, copy the joined list and assign it
 # to a variable called full_stack. Then insert Python and SQL after Redux.
 
@@ -63,8 +63,7 @@
 
 
 # B. Exercises: Level 2
-
-# 1. The following is a list of 10 students' ages: 
+1. The following is a list of 10 students' ages: 
 ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
 # Sort the list and find the minimum and maximum age
 ages.sort() #changes the original list still ages() just ordered

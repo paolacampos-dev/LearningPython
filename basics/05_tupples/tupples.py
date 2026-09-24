@@ -1,3 +1,26 @@
+word = tuple("python")
+print(word) # ('p', 'y', 't', 'h', 'o', 'n')
+type(word) # <class 'tuple'>
+
+# unpacking tuples
+rgb_lime_green = 50, 205, 50  # Thas is a tupple even without (); is the commas what makes them a tuple
+red, green, blue = rgb_lime_green # red=50, green=205..
+red, green, blue = 0, 0, 0  # red = 0, green = 0,...
+red, green, blue = rgb_lime_green = 50, 205, 50
+print(rgb_lime_green)  # (50, 205, 50)
+
+# getting a tuple as a return:
+def get_stats(sequence):
+    return max(sequence), min(sequence)
+
+numbers = 1, 2, 3
+print(get_stats(numbers)) # 3,1
+print(type(get_stats(numbers)))  # <class 'tuple'>
+
+maximum, minimum = get_stats(numbers)   # maximum 3
+                                        # minumum 1
+
+
 # Exercises: Level 1
 # 1. Create an empty tuple
 colors = ()
