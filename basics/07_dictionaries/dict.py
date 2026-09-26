@@ -1,3 +1,108 @@
+my_dog = {
+    "name": "Frieda",
+    "age": 5,
+    "nicknames": ["Fru-Fru", "Lady McNugget"],
+    "hungry": True
+}
+
+print(my_dog)   # {'name': 'Frieda', 'age': 5, 'nicknames': ['Fru-Fru', 'Lady McNugget'], 'hungry': True}
+
+
+# to acces the key called name:
+print(my_dog["name"])  # Frieda
+
+# Add a new value pair to the dict:
+my_dog["breed"] = "poodle"
+print(my_dog)  # {'name': 'Frieda', 'age': 5, 'nicknames': ['Fru-Fru', 'Lady McNugget'], 'hungry': True, 'breed': 'poodle'}
+
+# Change value:
+my_dog["age"] = 6
+print(my_dog) # {'name': 'Frieda', 'age': 6, 'nicknames': ['Fru-Fru', 'Lady McNugget'], 'hungry': True, 'breed': 'poodle'}
+
+# Delete a key-value pair:
+del my_dog["hungry"]
+
+
+# Check from a value:
+print(my_dog["breed"]) # poodle
+
+if "hungry" in my_dog:
+    print(my_dog["hungry"])  # because it doesnt exist it doesnt give an error
+
+
+# Loop over a dict:
+# Over the keys:
+for features in my_dog:
+    print(features)     # name
+                        # age
+                        # nicknames
+                        # breed
+# Over the pair-values:
+for features in my_dog:
+    print(features, my_dog[features])   # name Frieda
+                                        # age 6
+                                        # nicknames ['Fru-Fru', 'Lady McNugget']
+                                        # breed poodle
+# This way of code is more Pythonic:
+for features, character in my_dog.items(): 
+    print(features, character)              # name Frieda
+                                            # age 6
+                                            # nicknames ['Fru-Fru', 'Lady McNugget']
+                                            # breed poodle
+
+# Nesting dictionaries:======================================================================
+states = {
+    "California": {
+        "capital": "Sacramento",
+        "flower": "California Poppy"
+    },
+    "New York": {
+        "capital": "Albany",
+        "flower": "Rose"
+    },
+    "Texas": {
+        "capital": "Austin",
+        "flower": "Bluebonnet"
+    }
+}
+
+for state, facts in states.items():
+    print(state, facts)    # California {'capital': 'Sacramento', 'flower': 'California Poppy'}
+                            # New York {'capital': 'Albany', 'flower': 'Rose'}
+                            # Texas {'capital': 'Austin', 'flower': 'Bluebonnet'}
+# To access just flower:
+for state, facts in states.items():
+    print(state, facts["flower"])  
+
+# aceess the nexted value directly:
+print(states["Texas"]["capital"]) # Austin
+
+# challenge:
+
+captains = {
+    "Enterprise": "Picard",
+    "Voyager": "Janeway",
+    "Defiant": "Sisko", 
+}
+
+if "Enterprise" in captains:
+    print("Exists")
+else:
+    print("unkonwn")  # Exists
+
+if "Discovery" in captains:
+    print("Exists")
+else:
+    print("unkonwn")  # Unknown
+
+# for key, value in dictionary.items():
+for ship, captain in captains.items():
+    print(f"The {ship} is captained by {captain}")  # The Enterprise is captained by Picard
+                                                    # The Voyager is captained by Janeway
+                                                    # The Defiant is captained by Sisko
+
+
+
 
 # 💻 Exercises: 
 
