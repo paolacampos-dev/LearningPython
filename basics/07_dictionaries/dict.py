@@ -30,6 +30,18 @@ if "hungry" in my_dog:
     print(my_dog["hungry"])  # because it doesnt exist it doesnt give an error
 
 
+# -====================================
+a = dict()
+a['name'] = 'Darren'
+a['age'] = 19
+print(a)     # {'name': 'Darren', 'age': 19}
+print(a['age']) # 19
+
+# but if we tried to access a value which key doesnt exist we will get and error, then better to access dict with .get():
+print(a.get('country')) # None  (meaning there isnt any key called country)
+
+
+
 # Loop over a dict:
 # Over the keys:
 for features in my_dog:

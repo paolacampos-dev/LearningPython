@@ -4,6 +4,10 @@ A = {19, 22, 24, 20, 25, 26}
 B = {19, 22, 20, 25, 26, 24, 28, 27}
 age = [22, 19, 24, 25, 26, 24, 25, 24]
 
+a = [1, 1, 2, 2, 2, 3, 3, 4, 5]  # That is a list
+b = set(a)
+print(b)    # {1, 2, 3, 4, 5}  creates a set just with each unique values on it due sets dont accept repeated values
+
 
 # Exercises: Level 1
 #1. Find the length of the set it_companies

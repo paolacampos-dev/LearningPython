@@ -38,20 +38,30 @@ print(density, 'Kg/m^3') # Adding unit to the density
 # Assignment Operators:
 
 | Operator | Example   | Equivalent To     |
-| -------- | --------- | ----------------- |
+| -------- | --------- | ----------------- | ----------------------------------------------------------------------------- |
 | `=`      | `x = 3`   | Assign `3` to `x` |
-| `+=`     | `x += 3`  | `x = x + 3`       |
+| `+=`     | `x += 3`  | `x = x + 3`       | sum()                                                                         |
 | `-=`     | `x -= 3`  | `x = x - 3`       |
 | `*=`     | `x *= 3`  | `x = x * 3`       |
-| `/=`     | `x /= 3`  | `x = x / 3`       |
-| `%=`     | `x %= 3`  | `x = x % 3`       |
-| `//=`    | `x //= 3` | `x = x // 3`      |
-| `**=`    | `x **= 3` | `x = x ** 3`      |
+| `/=`     | `x /= 3`  | `x = x / 3`       | The output of a division always will be a float                               |
+| `%=`     | `x %= 3`  | `x = x % 3`       | module: left over in the division                                             |
+| `//=`    | `x //= 3` | `x = x // 3`      | floor division (what can be divided by) The output will always be an interger |
+| `**=`    | `x **= 3` | `x = x ** 3`      | Equal to pow(base, index)                                                     |
 | `&=`     | `x &= 3`  | `x = x & 3`       |
 | `\|=`    | `x \|= 3` | `x = x \| 3`      |
 | `^=`     | `x ^= 3`  | `x = x ^ 3`       |
 | `>>=`    | `x >>= 3` | `x = x >> 3`      |
 | `<<=`    | `x <<= 3` | `x = x << 3`      |
+
+divmod() => the outcome gives: (the floor division, module as an outcome)
+divmod(15, 4) # (3, 2)
+
+pow(base, index, %)
+
+round(4.6) # 5
+int(4.6) # 4
+
+range(start, ends, sequence)
 
 # Comparison Operators:
 
