@@ -1,3 +1,37 @@
+players = ['John', 'Mike', 'Bob']
+
+count = 0
+for player in players:
+    print(count, player)
+    count += 1  # 0 John
+                # 1 Mike
+                # 2 Bob
+
+# Refactoring iy:
+for count, player in enumerate(players):
+    print(count, player)    # 0 John
+                            # 1 Mike
+                            # 2 Bob
+
+# =====================================================
+countries = ['France', 'Tanzania', 'Canada']
+continents = ['Europe', 'Africa', 'North America']
+
+merged = []
+for i in range(len(countries)):
+    merged.append((countries[i], continents[i]))
+print(merged)   #  [('France', 'Europe'), ('Tanzania', 'Africa'), ('Canada', 'North America')]
+
+# refactoring it with the zip():
+merged_2 = zip(countries, continents)
+print(merged_2) # <zip object at 0x703e3c22b500>
+print(list(merged_2))   # [('France', 'Europe'), ('Tanzania', 'Africa'), ('Canada', 'North America')]
+
+for i in range(100):
+    print(i, end=' ')   # 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 
+
+
+
 
 ## 💻 Exercises: Day 10
 
