@@ -80,6 +80,7 @@ area_of_circle =  3.14 * radius ** 2
 circum_of_circle = 2 * radius * 3.14
 
 #Take radius as user input and calculate the area.
+# input function always return a string then needs to be converted into and int()
 radius = int(input ('Wwhat is the radius of a circle?'))
 area_of_circle =  3.14 * radius ** 2
 print(area_of_circle)
@@ -91,12 +92,49 @@ last_name = input("What is your last name? ")
 country = input("What country are you from? ")
 age = int(input("How old are you? "))
 print(first_name, ',', last_name, ',', country, ',', age)
+# if the user inputs and string then ValueError happens --> 14_handling_erros.py
 
-# advanced:
+# refactoring multiple values:
 first_name, last_name, country, age = input(
     "Enter first name, last name, country, age: "
 ).split(",")
 
-age = int(age)
+first_name = first_name.strip()
+last_name = last_name.strip()
+country = country.strip()
+age = int(age.strip())
 
+
+# multiple values: ================================================
+colors = "red, green, yellow"
+colors.split(",")   # ['red', 'green', 'yellow]
+
+# quiz:
+correct_answer = set(["green", "black", "red", "white"])    # kind of container list like the order doesnt matter
+print("What are the four colors of the Kenyan flag?")
+response = input("Enter your answer as a comma separated list: ")
+
+answer = set()
+for word in response.split(","):
+    answer.add(word.strip().lower())
+
+if answer == correct_answer:
+    print("You are correct!")
+else:
+    print("Sorry, the correct answer is:", ", ".join(correct_answer))
+
+
+# Hide the user input:
+from getpass import getpass
+
+SECRET = "badpassword"  # store it on os.getenv() (import os)  or encripted with hashlib module
+def main():
+    password = getpass("Enter your password: ") 
+    if password == SECRET:
+        print("You will be allowed in")
+    else:
+        print("Denied!")
+
+if __name__ == "__main__":  # means the module this file is running
+    main()
 

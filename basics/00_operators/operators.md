@@ -46,7 +46,7 @@ print(density, 'Kg/m^3') # Adding unit to the density
 | `/=`     | `x /= 3`  | `x = x / 3`       | The output of a division always will be a float                               |
 | `%=`     | `x %= 3`  | `x = x % 3`       | module: left over in the division                                             |
 | `//=`    | `x //= 3` | `x = x // 3`      | floor division (what can be divided by) The output will always be an interger |
-| `**=`    | `x **= 3` | `x = x ** 3`      | Equal to pow(base, index)                                                     |
+| `**=`    | `x **= 3` | `x = x ** 3`      | pow(base, index)                                                              |
 | `&=`     | `x &= 3`  | `x = x & 3`       |
 | `\|=`    | `x \|= 3` | `x = x \| 3`      |
 | `^=`     | `x ^= 3`  | `x = x ^ 3`       |
@@ -81,6 +81,20 @@ In addition to the above comparison operator Python uses:
 **in**: Returns True if the queried list contains a certain item(x in y)
 **not in**: Returns True if the queried list doesn't have a certain item(x not in y)
 
+# Preference when ambiguity:
+
+| Operators                                                        | Description                                      |
+| ---------------------------------------------------------------- | ------------------------------------------------ |
+| `**`                                                             | Exponentiation                                   |
+| `+x`, `-x`                                                       | Unary positive and unary negation                |
+| `*`, `/`, `//`, `%`                                              | Multiplication, division, floor division, modulo |
+| `+`, `-`                                                         | Addition, subtraction                            |
+| `==`, `!=`, `<`, `<=`, `>`, `>=`, `is`, `is not`, `in`, `not in` | Comparisons, identity, and membership            |
+| `not`                                                            | Boolean NOT                                      |
+| `and`                                                            | Boolean AND                                      |
+| `or`                                                             | Boolean OR                                       |
+| `:=`                                                             | Walrus                                           |
+
 # Logical operators (Boolean Logic)
 
 and returns True if both statements are true
@@ -101,6 +115,27 @@ print(not True) # False - Negation, the not operator turns true to false
 print(not False) # True
 print(not not True) # True
 print(not not False) # False
+
+# Membership operators: 'in', 'not in':
+
+## Membership Testing Operations Work on Many Objects
+
+You can use membership operators on:
+
+`list`, `tuple`, `dict`, `set`, `frozenset`, `string`, `bytes`,  
+`bytearray`, `memoryview`, `range`, `generator`, file-like object,  
+`array`, `deque`, view objects (on dict keys, values, and items), `map`  
+object, `zip` object, and custom classes that implement  
+`__contains__()`, `__iter__()`, `__getitem__()`.
+
+Because that’s too many to tackle—and because the syntax is always the same.
+Python under the hood does different things
+But it doesn’t work the _same_ on all objects!
+Most notably:
+
+- Sequences, such as `list` and `tuple`, use **iteration**
+- Strings use **substring checking**
+- Mappings, such as `dict` and `set`, use **hashing**
 
 # Exercises:
 
