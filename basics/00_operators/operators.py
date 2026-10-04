@@ -1,3 +1,9 @@
+# Mmbership operator
+"" in "rose"    # True
+
+
+
+
 # Exercises: --------------------------------------------------------
 # Declare your age as integer variable
 age = 35
