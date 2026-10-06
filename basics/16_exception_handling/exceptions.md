@@ -27,6 +27,8 @@ finally:
 
 # Build-in Exception hierarchy:
 
+(https://docs.python.org/3/builtins/exceptions.html)
+
 BaseException
 ├── SystemExit
 ├── KeyboardInterrupt
@@ -92,3 +94,55 @@ BaseException
 ├── BytesWarning
 ├── EncodingWarning
 └── ResourceWarning
+
+# Common Built-in Exceptions
+
+| Exception | Description |
+| `ImportError` | import statement can't load a module |
+| `NameError` | A global or local name isn't defined |
+| `AttributeError` | Accessed attribute is unavailable |
+| `IndexError` | Out of range access on a sequence (list, tuple, etc.) |
+| `KeyError` | Missing dictionary key referenced |
+| `ZeroDivisionError` | Divide by, or modulo, zero |
+| `TypeError` | Object type isn't compatible with operation |
+| `ValueError` | Right type of argument, but bad value |
+
+# LYBL vs EAFP
+
+## When to Use Which Style
+
+### General Guidelines
+
+| Use LBYL for                                                           | Use EAFP for                                                               |
+| ---------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| Operations that are likely to fail                                     | Operations that are unlikely to fail                                       |
+| Irrevocable operations, and operations that may have a side effect     | Input and output (IO) operations, mainly hard drive and network operations |
+| Common exceptional conditions that can be quickly prevented beforehand | Database operations that can be rolled back quickly                        |
+
+## EX: Avoiding Race Conditions
+
+### LBYL: Look Before You Leap
+
+```python
+connection = create_connection(db, host, user, password)
+
+# Later in your code...
+if connection.is_active():
+    # Update database here...
+    connection.commit()
+else:
+    # Handle the connection error here...
+```
+
+### EAFP: Easier to ask for Forginess
+
+```
+connection = create_connection(db, host, user, password)
+
+# Later in your code...
+try:
+# Update your database here...
+    connection.commit()
+except ConnectionError:
+    # Handle the connection error here...
+```
