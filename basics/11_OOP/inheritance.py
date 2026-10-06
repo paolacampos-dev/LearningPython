@@ -57,3 +57,42 @@ square = Square([
     Point(0, 1), 
 ])
 print(square)   # <__main__.Square object at 0x74bf4a6a6870>
+
+
+
+# inheritance:
+class Person:
+    def __init__(self, name, birth_date):
+        self.name = name
+        self.birth_date = birth_date
+
+
+class Employee(Person):
+    def __init__(self, name, birth_date, position):
+        super().__init__(name, birth_date)
+        self.position = position
+
+
+john = Employee("John Doe", "2001-02-07", "Python Developer")
+print(john) # <__main__.Employee object at 0x77a364d02c60>
+print(john.name)    # John Doe
+print(john.birth_date)  # 2001-02-07
+print(john.position)    # Python Developer
+
+
+# ----------------------------------
+# greet.py
+
+class Greeter:
+    def __init__(self, name, formal=False):
+        self.name = name
+        self.formal = formal
+
+    def greet(self):
+        if self.formal:
+            print(f"Good morning, {self.name}!")
+        else:
+            print(f"Hello, {self.name}!")
+
+informal_greeter = Greeter("Pythonista")    # Python Developer
+informal_greeter.greet()    # Hello, Pythonista!
